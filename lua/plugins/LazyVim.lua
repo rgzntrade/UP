@@ -5,7 +5,7 @@ return {
       { "olimorris/onedarkpro.nvim", priority = 999 },
     },
     opts = {
-      colorscheme = "onedark",
+      -- colorscheme = "onedark",
     },
   },
 }
