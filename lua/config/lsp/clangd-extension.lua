@@ -1,9 +1,9 @@
-local status, clang_exetensions = pcall(require, "clangd_extensions")
+local status, clangd_exetensions = pcall(require, "clangd_extensions")
 if not status then
   vim.notify("clangd_extensions not found!")
   return
 end
-require("clangd_extensions").setup({
+clangd_exetensions.setup({
   server = {
     -- options to pass to nvim-lspconfig
     -- i.e. the arguments to require("lspconfig").clangd.setup({})

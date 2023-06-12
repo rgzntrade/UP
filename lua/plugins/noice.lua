@@ -1,5 +1,6 @@
 return {
   "folke/noice.nvim",
+  event = "VeryLazy",
   opts = function(_, opts)
     opts.presets = {
       -- you can enable a preset by setting it to true, or a table that will override the preset config
