@@ -44,3 +44,9 @@ keymap("n", "<leader>K", "<cmd>lua require'dapui'.eval()<cr>", { desc = "求值"
 keymap("n", "<leader>wo", "<C-w>o", { desc = "关闭其它窗口" })
 -- clangd
 keymap("n", "<A-o>", "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "切换h/cpp" })
+-- toggleterm
+keymap({ "n", "t" }, "<A-h>", "<cmd>ToggleTerm size=20 direction=horizontal<cr>", { desc = "横向终端" })
+keymap({ "n", "t" }, "<A-v>", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "纵向终端" })
+keymap({ "n", "t" }, "<A-t>", "<cmd>ToggleTerm size=40 direction=tab<cr>", { desc = "tab终端" })
+keymap({ "n", "t" }, "<A-f>", "<cmd>ToggleTerm size=40 direction=float<cr>", { desc = "浮动终端" })
+keymap({ "n", "t" }, "<A-n>", "<cmd>ToggleTerm<cr>", { desc = "终端开关" })
