@@ -39,3 +39,5 @@ keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", { desc = "进入" 
 keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", { desc = "跳出" })
 keymap("n", "<leader>K", "<cmd>lua require'dapui'.eval()<cr>", { desc = "求值" })
 -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", {desc = ""})
+--
+keymap("n", "<leader>wo", "<C-w>o", {desc = "关闭其它窗口"})
