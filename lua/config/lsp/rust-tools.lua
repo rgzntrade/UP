@@ -165,11 +165,11 @@ local opts = {
 
   -- debugging stuff
   dap = {
-    adapter = {
-      type = "executable",
-      command = "lldb-vscode",
-      name = "rt_lldb",
-    },
+    -- adapter = {
+    --   type = "executable",
+    --   command = "lldb-vscode",
+    --   name = "rt_lldb",
+    -- },
   },
 }
 

@@ -25,6 +25,8 @@ return {
         "cmake-language-server",
         "cmakelang",
         "shellcheck",
+        "stylua",
+        "shfmt",
       }, -- not an option from mason.nvim
     },
   },
