@@ -42,6 +42,9 @@ keymap("n", "<leader>K", "<cmd>lua require'dapui'.eval()<cr>", { desc = "求值"
 
 -- windows
 keymap("n", "<leader>wo", "<C-w>o", { desc = "关闭其它窗口" })
+keymap("n", "<leader>wz", "<cmd>WindowsMaximize<cr>", { desc = "窗口最大化" })
+keymap("n", "<leader>w=", "<cmd>WindowsEqualize<cr>", { desc = "窗口等距" })
+
 -- clangd
 keymap("n", "<A-o>", "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "切换h/cpp" })
 -- toggleterm
