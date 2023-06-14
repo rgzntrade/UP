@@ -78,4 +78,21 @@ return {
       require("colorizer").setup()
     end,
   },
+  {
+    "goolord/alpha-nvim",
+    opts = function(_, opts)
+      local dashboard = require("alpha.themes.dashboard")
+      local logo = [[
+    
+      ██╗    ███╗    ██╗   ██╗██████╗     ███╗    ██╗  
+     ██╔╝    ██╔╝    ██║   ██║██╔══██╗    ╚██║    ╚██╗ 
+    ██╔╝     ██║     ██║   ██║██████╔╝     ██║     ╚██╗
+    ╚██╗     ██║     ██║   ██║██╔═══╝      ██║     ██╔╝
+     ╚██╗    ███╗    ╚██████╔╝██║         ███║    ██╔╝ 
+      ╚═╝    ╚══╝     ╚═════╝ ╚═╝         ╚══╝    ╚═╝  
+                                                   
+      ]]
+      dashboard.section.header.val = vim.split(logo, "\n")
+    end,
+  },
 }
