@@ -7,4 +7,6 @@ return {
   --   end,
   -- },
   { "akinsho/git-conflict.nvim", version = "*", config = true },
+  -- TODO: 添加快捷键
+  { "sindrets/diffview.nvim", version = "*", config = true },
 }

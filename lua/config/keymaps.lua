@@ -47,9 +47,13 @@ keymap("n", "<leader>w=", "<cmd>WindowsEqualize<cr>", { desc = "窗口等距" })
 
 -- clangd
 keymap("n", "<A-o>", "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "切换h/cpp" })
+
 -- toggleterm
 keymap({ "n", "t" }, "<A-h>", "<cmd>ToggleTerm size=20 direction=horizontal<cr>", { desc = "横向终端" })
 keymap({ "n", "t" }, "<A-v>", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "纵向终端" })
 keymap({ "n", "t" }, "<A-t>", "<cmd>ToggleTerm size=40 direction=tab<cr>", { desc = "tab终端" })
 keymap({ "n", "t" }, "<A-f>", "<cmd>ToggleTerm size=40 direction=float<cr>", { desc = "浮动终端" })
 keymap({ "n", "t" }, "<A-n>", "<cmd>ToggleTerm<cr>", { desc = "终端开关" })
+
+-- symbol-outline
+keymap("n", "<leader>gf", "<cmd>SymbolsOutline<cr>", { desc = "符号大纲" })
