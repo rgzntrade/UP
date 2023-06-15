@@ -4,7 +4,7 @@
 
 vim.api.nvim_create_autocmd("FileType", {
   -- group = augroup("load_breakpoints"),
-  pattern = { "lua", "cpp", "rs", "py" },
+  pattern = { "lua", "cpp", "rust", "python" },
   callback = function()
     require("config.debug-dap.dap-util").load_breakpoints()
   end,
