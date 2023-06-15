@@ -16,7 +16,12 @@ local function keymap(mode, lhs, rhs, opts)
 end
 
 -- debug
-keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = "断点" })
+keymap(
+  "n",
+  "<F9>",
+  "<cmd>lua require'dap'.toggle_breakpoint(); require'config.debug-dap.dap-util'.store_breakpoints(true) <cr>",
+  { desc = "断点" }
+)
 keymap(
   "n",
   "<leader>dc",
