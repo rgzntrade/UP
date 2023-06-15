@@ -66,3 +66,7 @@ vim.o.listchars = "space: ,tab:→ ,trail:-,precedes:«,extends:…,nbsp:+,eol:�
 vim.o.wildmenu = true
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
+-- 开启 Folding 模块
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
