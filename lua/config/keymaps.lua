@@ -62,3 +62,12 @@ keymap({ "n", "t" }, "<A-n>", "<cmd>ToggleTerm<cr>", { desc = "终端开关" })
 
 -- symbol-outline
 keymap("n", "<leader>gf", "<cmd>SymbolsOutline<cr>", { desc = "符号大纲" })
+
+-- Telescope
+keymap(
+  "n",
+  "<leader>fg",
+  ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+  { desc = "带参数内容搜索" }
+)
+keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", { desc = "媒体浏览" })

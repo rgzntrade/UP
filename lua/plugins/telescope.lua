@@ -14,6 +14,17 @@ return {
       "nvim-telescope/telescope-dap.nvim",
       "nvim-telescope/telescope-frecency.nvim",
       "kkharji/sqlite.lua",
+      { "nvim-telescope/telescope-media-files.nvim" },
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    },
+    opts = {
+      media_files = {
+        -- filetypes whitelist
+        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+        filetypes = { "png", "webp", "jpg", "jpeg" },
+        -- find command (defaults to `fd`)
+        find_cmd = "rg",
+      },
     },
     config = function()
       require("telescope").load_extension("fzf")
@@ -23,6 +34,8 @@ return {
       require("telescope").load_extension("notify")
       require("telescope").load_extension("project")
       require("telescope").load_extension("frecency")
+      require("telescope").load_extension("media_files")
+      require("telescope").load_extension("live_grep_args")
     end,
   },
 }

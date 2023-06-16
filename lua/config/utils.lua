@@ -1,4 +1,22 @@
 local M = {}
+
+M.path = {
+  create_directory = function(path)
+    local success, error_msg = io.open(path, "r")
+    if not success then
+      local mkdir_cmd = string.format("mkdir -p %s", path)
+      os.execute(mkdir_cmd)
+      success, error_msg = io.open(path, "r")
+      if not success then
+        vim.notify("Failed to create directory:", path, error_msg)
+        return false
+      end
+    end
+    success:close()
+    return true
+  end,
+}
+
 M.system = {
   is_windows = function()
     local result = vim.api.nvim_eval("has('win32') || has('win64')")

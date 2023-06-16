@@ -1,5 +1,6 @@
 local M = {}
 local dap = require("dap")
+local utils = require("config.utils")
 
 -- refresh config
 M.reload_continue = function()
@@ -74,6 +75,7 @@ local bp_base_dir = vim.env.HOME .. "/.cache/dap-breakpoint/"
 local breakpoints = require("dap.breakpoints")
 -- local utils = require("user.utils")
 function M.store_breakpoints()
+  utils.path.create_directory(bp_base_dir)
   if not exists(bp_base_dir) then
     os.execute("md -p " .. bp_base_dir)
   end
