@@ -25,15 +25,19 @@ return {
           require("codeium").setup({})
         end,
       },
+      {
+        "saecki/crates.nvim",
+      },
     },
     opts = function(_, opts)
       local cmp = require("cmp")
-      opts.sources = cmp.config.sources(
-        vim.list_extend(
-          opts.sources,
-          { { name = "codeium" }, { name = "cmdline" }, { name = "nvim_lua" }, { name = "cmp_tabnine" } }
-        )
-      )
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+        { name = "codeium" },
+        { name = "cmdline" },
+        { name = "nvim_lua" },
+        { name = "cmp_tabnine" },
+        { name = "crates" },
+      }))
       opts.mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
