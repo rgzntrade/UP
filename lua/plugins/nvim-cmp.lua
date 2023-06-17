@@ -6,6 +6,7 @@ return {
       {
         "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-cmdline",
+        "hrsh7th/cmp-emoji",
       },
       {
         "tzachar/cmp-tabnine",
@@ -37,6 +38,7 @@ return {
         { name = "nvim_lua" },
         { name = "cmp_tabnine" },
         { name = "crates" },
+        { name = "emoji" },
       }))
       opts.mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
