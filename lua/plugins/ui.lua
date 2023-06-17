@@ -5,7 +5,10 @@ return {
     event = "VeryLazy",
     version = "2.*",
     config = function()
-      require("window-picker").setup()
+      require("window-picker").setup({
+        other_win_hl_color = "#3f3f3f",
+        current_win_hl_color = "#3b4261",
+      })
     end,
   },
   {
