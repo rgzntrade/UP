@@ -71,3 +71,53 @@ keymap(
   { desc = "带参数内容搜索" }
 )
 keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", { desc = "媒体浏览" })
+
+-- refactoring
+keymap(
+  "v",
+  "<leader>re",
+  "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>",
+  { desc = "提取函数", noremap = true, silent = true, expr = false }
+)
+keymap(
+  "v",
+  "<leader>rf",
+  "<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>",
+  { desc = "提取函数到文件", noremap = true, silent = true, expr = false }
+)
+keymap(
+  "v",
+  "<leader>rv",
+  "<Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>",
+  { desc = "提取变量", noremap = true, silent = true, expr = false }
+)
+keymap(
+  "v",
+  "<leader>ri",
+  "<Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>",
+  { desc = "内联变量", noremap = true, silent = true, expr = false }
+)
+keymap(
+  "n",
+  "<leader>rb",
+  "<Cmd>lua require('refactoring').refactor('Extract Block')<CR>",
+  { desc = "提取块", noremap = true, silent = true, expr = false }
+)
+keymap(
+  "n",
+  "<leader>rbf",
+  "<Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>",
+  { desc = "提取块到文件", noremap = true, silent = true, expr = false }
+)
+keymap(
+  "n",
+  "<leader>ri",
+  "<Cmd>lua require('refactoring').refactor('Inline Variable')<CR>",
+  { desc = "内敛变量", noremap = true, silent = true, expr = false }
+)
+keymap(
+  "v",
+  "<leader>rr",
+  "lua require('refactoring').select_refactor()<CR",
+  { desc = "重构方法", noremap = true, silent = true, expr = false }
+)
