@@ -30,4 +30,9 @@ return {
       }, -- not an option from mason.nvim
     },
   },
+  {
+    "ecthelionvi/NeoComposer.nvim",
+    dependencies = { "kkharji/sqlite.lua" },
+    opts = {},
+  },
 }

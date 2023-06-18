@@ -70,7 +70,8 @@ keymap(
   ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
   { desc = "带参数内容搜索" }
 )
-keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", { desc = "媒体浏览" })
+keymap("n", "<leader>fM", "<cmd>Telescope media_files<cr>", { desc = "媒体浏览" })
+keymap("n", "<leader>fm", "<cmd>Telescope macros<cr>", { desc = "宏管理" })
 
 -- refactoring
 keymap(

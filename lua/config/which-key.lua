@@ -80,8 +80,8 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Welcome" },
-  c = {
+  a = { a = { "<cmd>Alpha<cr>", "Welcome" } },
+  m = {
     name = "CMake",
     g = { "<cmd>CMake configure<CR>", "Configure" },
     t = { "<cmd>CMake select_target<CR>", "SelectTarget" },
@@ -90,7 +90,7 @@ local mappings = {
     a = { "<cmd>CMake build_all<CR>", "BuildAll" },
     r = { "<cmd>CMake build_and_run<CR>", "Run" },
     d = { "<cmd>CMake build_and_debug<CR>", "DebugTarget" },
-    c = { "<cmd>CMake cancel<CR>", "Cancel" },
+    q = { "<cmd>CMake cancel<CR>", "Cancel" },
     s = { "<cmd>CMake set_target_args<CR>", "SetArg" },
     -- TODO: 增加 +code
   },
