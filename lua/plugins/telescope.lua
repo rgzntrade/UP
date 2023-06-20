@@ -37,6 +37,7 @@ return {
       require("telescope").load_extension("media_files")
       require("telescope").load_extension("live_grep_args")
       require("telescope").load_extension("macros")
+      require("telescope").load_extension("find_template")
     end,
   },
 }

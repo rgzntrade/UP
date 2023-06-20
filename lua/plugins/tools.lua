@@ -47,4 +47,15 @@ return {
       })
     end,
   },
+  {
+    "glepnir/template.nvim",
+    cmd = { "Template", "TemProject" },
+    config = function()
+      require("template").setup({
+        -- config in there
+        temp_dir = "~/.config/nvim_up/lua/config/template",
+        author = "rgzntrade",
+      })
+    end,
+  },
 }

@@ -72,6 +72,7 @@ keymap(
 )
 keymap("n", "<leader>fM", "<cmd>Telescope media_files<cr>", { desc = "媒体浏览" })
 keymap("n", "<leader>fm", "<cmd>Telescope macros<cr>", { desc = "宏管理" })
+keymap("n", "<leader>tt", "<cmd>Telescope find_template<cr>", { desc = "模版管理" })
 
 -- refactoring
 keymap(
