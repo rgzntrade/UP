@@ -1,17 +1,13 @@
-local status, dap = pcall(require, "dap")
-if not status then
-  vim.notify("dap not found!")
-  return
-end
+local M = {}
 
-dap.adapters.python = {
+M.python = {
   type = "executable",
   command = "python",
   -- args = { "-m", vim.fn.stdpath "data" .. "/mason/packages/debugpy/debugpy" },
   args = { "-m", "debugpy.adapter" },
 }
 
-dap.configurations.python = {
+M.python = {
   -- launch exe
   {
     type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
@@ -32,3 +28,5 @@ dap.configurations.python = {
     end,
   },
 }
+
+return M

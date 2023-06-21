@@ -1,9 +1,5 @@
-local status, dap = pcall(require, "dap")
-if not status then
-  vim.notify("dap not found!")
-  return
-end
-dap.adapters.codelldb = {
+local M = {}
+M.codelldb = {
   type = "server",
   port = "${port}",
   executable = {
@@ -17,23 +13,22 @@ dap.adapters.codelldb = {
   },
 }
 
--- vim.notify("dap-config")
-
-dap.configurations.cpp = {
+M.cpp = {
   -- launch exe
   {
     name = "Launch file",
     type = "codelldb",
     request = "launch",
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
+    -- program = function()
+    --   return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+    -- end,
     -- args = function()
     --  local input = vim.fn.input("Input args: ")
     --  return require("debug-dap.dap-util").str2argtable(input)
     -- end,
     cwd = "${workspaceFolder}",
     stopOnEntry = false,
+    stopOnThrow = false,
     setupCommands = {
       {
         description = "enable pretty printing",
@@ -47,10 +42,11 @@ dap.configurations.cpp = {
     name = "Attach process",
     type = "codelldb",
     request = "attach",
+    stopOnThrow = false,
     processId = require("dap.utils").pick_process,
-    program = function()
-      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-    end,
+    -- program = function()
+    --   return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+    -- end,
     cwd = "${workspaceFolder}",
     setupCommands = {
       {
@@ -64,5 +60,6 @@ dap.configurations.cpp = {
 }
 
 -- setup other language
-dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+M.c = M.cpp
+M.rust = M.cpp
+return M
