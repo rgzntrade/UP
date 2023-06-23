@@ -34,6 +34,7 @@ keymap(
   "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<cr>",
   { desc = "日志断点" }
 )
+keymap("n", "<leader>dd", "<cmd>lua require'dap'.disconnect()<cr>", { desc = "断开连接" })
 -- keymap("n", "<leader>dr", "lua require'dap'.repl.open()<cr>", { desc = "打开交互" })
 -- keymap("n", "<Leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = "运行最后一个" })
 -- keymap("n", "<C-F5>", '<cmd>lua require"debug-dap.dap-util".reload_continue()<CR>', { desc = "重新开始" })
