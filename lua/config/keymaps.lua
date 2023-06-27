@@ -63,6 +63,8 @@ keymap({ "n", "t" }, "<A-n>", "<cmd>ToggleTerm<cr>", { desc = "终端开关" })
 
 -- symbol-outline
 keymap("n", "<leader>gf", "<cmd>SymbolsOutline<cr>", { desc = "符号大纲" })
+-- gitui
+keymap("n", "<leader>gg", "<cmd>lua require'gitui'.open()<cr>", { desc = "打开gitui" })
 
 -- Telescope
 keymap(
