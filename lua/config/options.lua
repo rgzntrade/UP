@@ -61,7 +61,8 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 -- 不可见字符的显示，这里只把空格显示为一个点
 vim.o.list = true
-vim.o.listchars = "space: ,tab:→ ,trail:-,precedes:«,extends:…,nbsp:+,eol:⏎"
+-- 换行与插件显示重叠 ,eol:⏎
+vim.o.listchars = "space: ,tab:→ ,trail:-,precedes:«,extends:…,nbsp:+"
 -- 补全增强
 vim.o.wildmenu = true
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
