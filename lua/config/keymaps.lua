@@ -45,6 +45,12 @@ keymap("n", "<leader>dd", "<cmd>lua require'dap'.disconnect()<cr>", { desc = "�
 -- keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", { desc = "跳出" })
 -- keymap("n", "<leader>K", "<cmd>lua require'dapui'.eval()<cr>", { desc = "求值" })
 -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", {desc = ""})
+--
+
+-- buffers
+keymap("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "关闭其它Buffers" })
+keymap("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", { desc = "关闭右边Buffers" })
+keymap("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", { desc = "关闭左边Buffers" })
 
 -- windows
 keymap("n", "<leader>wo", "<C-w>o", { desc = "关闭其它窗口" })
