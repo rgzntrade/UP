@@ -26,9 +26,10 @@ return {
           require("codeium").setup({})
         end,
       },
-      {
-        "saecki/crates.nvim",
-      },
+      -- 使用lazyvim的配置
+      -- {
+      --   "saecki/crates.nvim",
+      -- },
     },
     opts = function(_, opts)
       local cmp = require("cmp")
@@ -37,7 +38,8 @@ return {
         { name = "cmdline" },
         { name = "nvim_lua" },
         { name = "cmp_tabnine" },
-        { name = "crates" },
+        -- 使用lazyvim的配置
+        -- { name = "crates" },
         { name = "emoji" },
       }))
       opts.mapping = {

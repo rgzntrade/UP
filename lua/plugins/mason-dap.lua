@@ -8,10 +8,11 @@ return {
         -- Keep original functionality
         require("mason-nvim-dap").default_setup(config)
       end,
-      codelldb = function(config)
-        config.configurations = require("config.debug-dap.codelldb")
-        require("mason-nvim-dap").default_setup(config) -- don't forget this!
-      end,
+      -- 使用lazyvim的配置
+      -- codelldb = function(config)
+      --   config.configurations = require("config.debug-dap.codelldb")
+      --   require("mason-nvim-dap").default_setup(config) -- don't forget this!
+      -- end,
     }
   end,
 }
