@@ -27,6 +27,9 @@ return {
         "shellcheck",
         "stylua",
         "shfmt",
+        "tailwindcss-language-server",
+        "css-lsp",
+        "html-lsp",
       }, -- not an option from mason.nvim
     },
   },

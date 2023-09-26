@@ -2,7 +2,22 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "c", "cpp", "bash", "python", "lua", "rust", "yaml", "json", "toml", "cmake" },
+      ensure_installed = {
+        "c",
+        "cpp",
+        "bash",
+        "python",
+        "lua",
+        "rust",
+        "yaml",
+        "json",
+        "toml",
+        "cmake",
+        "html",
+        "javascript",
+        "typescript",
+        "css",
+      },
     },
     dependencies = {
       "romgrk/nvim-treesitter-context",
