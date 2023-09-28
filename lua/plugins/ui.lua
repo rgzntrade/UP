@@ -19,7 +19,7 @@ return {
       theme = "spring", -- can be one of rhe "leaves", "snow", "stars", "xmas", "spring", "summer" themes, or a custom theme
       max = 40, -- maximum number of drops on the screen
       interval = 150, -- every 150ms we update the drops
-      screensaver = 1000 * 60 * 5, -- show after 5 minutes. Set to false, to disable
+      screensaver = 1000 * 60 * 60, -- show after 5 minutes. Set to false, to disable
       filetypes = { "dashboard", "starter" }, -- will enable/disable automatically for the following filetypes
     },
   },
@@ -65,7 +65,7 @@ return {
       require("windows").setup({
         autowidth = { --		       |windows.autowidth|
           enable = true,
-          winwidth = 1.8, --		        |windows.winwidth|
+          winwidth = 3, --		        |windows.winwidth|
           filetype = { --	      |windows.autowidth.filetype|
             help = 2,
           },
