@@ -20,7 +20,7 @@ return {
       max = 40, -- maximum number of drops on the screen
       interval = 150, -- every 150ms we update the drops
       screensaver = 1000 * 60 * 60, -- show after 5 minutes. Set to false, to disable
-      filetypes = { "dashboard", "starter" }, -- will enable/disable automatically for the following filetypes
+      filetypes = { "dashboard", "starter", "dashboard-nvim" }, -- will enable/disable automatically for the following filetypes
     },
   },
   -- Lua
@@ -91,22 +91,38 @@ return {
     end,
   },
   {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      local dashboard = require("alpha.themes.dashboard")
-      local logo = [[
-    
-      ██╗    ███╗    ██╗   ██╗██████╗     ███╗    ██╗  
-     ██╔╝    ██╔╝    ██║   ██║██╔══██╗    ╚██║    ╚██╗ 
+  "nvimdev/dashboard-nvim",
+  optional = true,
+  opts = function(_, opts)
+  local logo = [[
+      ██╗    ███╗    ██╗   ██╗██████╗     ███╗    ██╗
+     ██╔╝    ██╔╝    ██║   ██║██╔══██╗    ╚██║    ╚██╗
     ██╔╝     ██║     ██║   ██║██████╔╝     ██║     ╚██╗
     ╚██╗     ██║     ██║   ██║██╔═══╝      ██║     ██╔╝
-     ╚██╗    ███╗    ╚██████╔╝██║         ███║    ██╔╝ 
-      ╚═╝    ╚══╝     ╚═════╝ ╚═╝         ╚══╝    ╚═╝  
-                                                   
+     ╚██╗    ███╗    ╚██████╔╝██║         ███║    ██╔╝
+      ╚═╝    ╚══╝     ╚═════╝ ╚═╝         ╚══╝    ╚═╝
       ]]
-      dashboard.section.header.val = vim.split(logo, "\n")
-    end,
-  },
+  logo = string.rep("\n", 8) .. logo .. "\n\n"
+  opts.config.header = vim.split(logo, "\n")
+  end,
+},
+  -- {
+  --   "goolord/alpha-nvim",
+  --   opts = function(_, opts)
+  --     local dashboard = require("alpha.themes.dashboard")
+  --     local logo = [[
+  --
+  --     ██╗    ███╗    ██╗   ██╗██████╗     ███╗    ██╗  
+  --    ██╔╝    ██╔╝    ██║   ██║██╔══██╗    ╚██║    ╚██╗ 
+  --   ██╔╝     ██║     ██║   ██║██████╔╝     ██║     ╚██╗
+  --   ╚██╗     ██║     ██║   ██║██╔═══╝      ██║     ██╔╝
+  --    ╚██╗    ███╗    ╚██████╔╝██║         ███║    ██╔╝ 
+  --     ╚═╝    ╚══╝     ╚═════╝ ╚═╝         ╚══╝    ╚═╝  
+  --
+  --     ]]
+  --     dashboard.section.header.val = vim.split(logo, "\n")
+  --   end,
+  -- },
   {
     "mawkler/modicator.nvim",
     evnet = "VeryLazy",

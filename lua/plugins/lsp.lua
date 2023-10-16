@@ -20,10 +20,11 @@ return {
       },
     },
     dependencies = {
-      "romgrk/nvim-treesitter-context",
+      "nvim-treesitter/nvim-treesitter-context",
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
-  },
+    
+   },
   {
     "simrat39/symbols-outline.nvim",
     event = "VeryLazy",
@@ -42,10 +43,10 @@ return {
       { "nvim-treesitter/nvim-treesitter" },
     },
   },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      autoformat = false,
-    },
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     autoformat = false,
+  --   },
+  -- },
 }
