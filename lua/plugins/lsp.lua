@@ -17,6 +17,8 @@ return {
         "javascript",
         "typescript",
         "css",
+        "jsonc",
+        "regex",
       },
     },
     dependencies = {
