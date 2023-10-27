@@ -2,12 +2,12 @@ return {
   {
     "LazyVim/LazyVim",
     dependencies = {
-      { "olimorris/onedarkpro.nvim", priority = 999 },
-      { "rebelot/kanagawa.nvim", priority = 999 },
+      { "olimorris/onedarkpro.nvim", priority = 1000},
+      { "rebelot/kanagawa.nvim", priority = 998 },
       {
         "catppuccin/nvim",
         name = "catppuccin",
-        priority = 1000,
+        priority = 999,
         config = function()
           require("catppuccin").setup({
             flavour = "macchiato", -- latte, frappe, macchiato, mocha
@@ -16,7 +16,7 @@ return {
       },
     },
     opts = {
-      -- colorscheme = "catppuccin",
+      colorscheme = "onedark_vivid",
     },
   },
 }
