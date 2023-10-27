@@ -113,7 +113,7 @@ keymap(
 )
 keymap(
   "n",
-  "<leader>rb",
+  "<leader>rbb",
   "<Cmd>lua require('refactoring').refactor('Extract Block')<CR>",
   { desc = "提取块", noremap = true, silent = true, expr = false }
 )

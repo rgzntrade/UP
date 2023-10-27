@@ -8,24 +8,26 @@ return {
         "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-emoji",
       },
-      {
-        "tzachar/cmp-tabnine",
-        build = "./install.sh",
-        config = function()
-          local tabnine = require("cmp_tabnine.config")
-          tabnine:setup({}) -- put your options here
-        end,
-      },
-      {
-        "jcdickinson/codeium.nvim",
-        event = "InsertEnter",
-        dependencies = {
-          "nvim-lua/plenary.nvim",
-        },
-        config = function()
-          require("codeium").setup({})
-        end,
-      },
+      -- 使用lazyvim的配置
+      -- {
+      --   "tzachar/cmp-tabnine",
+      --   build = "./install.sh",
+      --   config = function()
+      --     local tabnine = require("cmp_tabnine.config")
+      --     tabnine:setup({}) -- put your options here
+      --   end,
+      -- },
+      -- 使用lazyvim的配置
+      -- {
+      --   "jcdickinson/codeium.nvim",
+      --   event = "InsertEnter",
+      --   dependencies = {
+      --     "nvim-lua/plenary.nvim",
+      --   },
+      --   config = function()
+      --     require("codeium").setup({})
+      --   end,
+      -- },
       -- 使用lazyvim的配置
       -- {
       --   "saecki/crates.nvim",
