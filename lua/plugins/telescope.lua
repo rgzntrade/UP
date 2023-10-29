@@ -17,6 +17,7 @@ return {
       "kkharji/sqlite.lua",
       { "nvim-telescope/telescope-media-files.nvim" },
       { "nvim-telescope/telescope-live-grep-args.nvim" },
+      "debugloop/telescope-undo.nvim",
     },
     opts = {
       media_files = {
@@ -39,6 +40,7 @@ return {
       require("telescope").load_extension("live_grep_args")
       require("telescope").load_extension("macros")
       require("telescope").load_extension("find_template")
+      require("telescope").load_extension("undo")
     end,
   },
 }
