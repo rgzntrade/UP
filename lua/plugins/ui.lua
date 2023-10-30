@@ -140,6 +140,7 @@ return {
     "gen740/SmoothCursor.nvim",
     config = function()
   require("smoothcursor").setup({
+    cursorID = 1,
     type = "exp", -- Cursor movement calculation method, choose "default", "exp" (exponential) or "matrix".
 
     cursor = "", -- Cursor shape (requires Nerd Font). Disabled in fancy mode.
