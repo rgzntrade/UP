@@ -20,7 +20,7 @@ return {
       max = 40, -- maximum number of drops on the screen
       interval = 150, -- every 150ms we update the drops
       screensaver = 1000 * 60 * 60, -- show after 5 minutes. Set to false, to disable
-      filetypes = { "dashboard", "starter", "dashboard-nvim" }, -- will enable/disable automatically for the following filetypes
+      filetypes = { "starter" }, -- will enable/disable automatically for the following filetypes
     },
   },
   -- Lua
