@@ -24,6 +24,7 @@ return {
         "prettier",
         "cmake-language-server",
         "cmakelang",
+        "cmakelint",
         "shellcheck",
         "stylua",
         "shfmt",
