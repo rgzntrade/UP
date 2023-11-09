@@ -206,5 +206,10 @@ return {
   })
     end,
   },
-  {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'},
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "WinNew" },
+ },
 }
