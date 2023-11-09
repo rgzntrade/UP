@@ -144,3 +144,9 @@ keymap("n", "<leader>rms", "<cmd>SearchReplaceMultiBufferSelections<cr>", { desc
 
 -- undo
 keymap("n", "<leader>su", "<cmd>Telescope undo<cr>", { desc = "查看撤销修改内容" })
+
+-- translate
+keymap({"n","v"}, "<leader>tm", "<cmd>Translate<cr>", { desc = "翻译并在消息显示" })
+keymap({"n","v"}, "<leader>tw", "<cmd>TranslateW<cr>", { desc = "翻译并在窗口显示" })
+keymap({"n","v"}, "<leader>tr", "<cmd>TranslateR<cr>", { desc = "翻译并替换" })
+
