@@ -22,6 +22,12 @@ keymap(
   "<cmd>lua require'dap'.toggle_breakpoint(); require'config.debug-dap.dap-util'.store_breakpoints(true) <cr>",
   { desc = "断点" }
 )
+keymap(
+  "n",
+  "<F9>",
+  "<cmd>lua require'dap'.toggle_breakpoint(); require'config.debug-dap.dap-util'.store_breakpoints(true) <cr>",
+  { desc = "断点" }
+)
 -- keymap(
 --   "n",
 --   "<leader>dc",
@@ -39,13 +45,12 @@ keymap("n", "<leader>dd", "<cmd>lua require'dap'.disconnect()<cr>", { desc = "�
 -- keymap("n", "<Leader>dl", "<cmd>lua require'dap'.run_last()<cr>", { desc = "运行最后一个" })
 -- keymap("n", "<C-F5>", '<cmd>lua require"debug-dap.dap-util".reload_continue()<CR>', { desc = "重新开始" })
 -- keymap("n", "<S-F5>", "<cmd>lua require'dap'.terminate()<cr>", { desc = "终止调试" })
--- keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", { desc = "继续运行" })
--- keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", { desc = "跳过" })
--- keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", { desc = "进入" })
--- keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", { desc = "跳出" })
+keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", { desc = "继续运行" })
+keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", { desc = "跳过" })
+keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", { desc = "进入" })
+keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", { desc = "跳出" })
 -- keymap("n", "<leader>K", "<cmd>lua require'dapui'.eval()<cr>", { desc = "求值" })
 -- keymap("n", "<leader>dt", "<cmd>lua require'dapui'.toggle()<cr>", {desc = ""})
---
 
 -- buffers
 keymap("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "关闭其它Buffers" })
@@ -149,4 +154,3 @@ keymap("n", "<leader>su", "<cmd>Telescope undo<cr>", { desc = "查看撤销修�
 keymap({"n","v"}, "<leader>tm", "<cmd>Translate<cr>", { desc = "翻译并在消息显示" })
 keymap({"n","v"}, "<leader>tw", "<cmd>TranslateW<cr>", { desc = "翻译并在窗口显示" })
 keymap({"n","v"}, "<leader>tr", "<cmd>TranslateR<cr>", { desc = "翻译并替换" })
-
