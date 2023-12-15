@@ -156,6 +156,5 @@ keymap({"n","v"}, "<leader>tw", "<cmd>TranslateW<cr>", { desc = "翻译并在窗
 keymap({"n","v"}, "<leader>tr", "<cmd>TranslateR<cr>", { desc = "翻译并替换" })
 
 -- File
-keymap({"n","v"}, "<leader>cn", "<cmd>let @*=expand('%:t')<cr>", { desc = "复制文件名" })
-keymap({"n","v"}, "<leader>cp", "<cmd>let @*=expand('%:p')<cr>", { desc = "复制文件路径" })
-
+keymap({"n", "v"}, "<leader>cn", [[<cmd>let @+ = expand('%:t')<cr><cmd>let @* = expand('%:t')<cr>]], { desc = "复制文件名" })
+keymap({"n", "v"}, "<leader>cp", [[<cmd>let @+ = expand('%:p')<cr><cmd>let @* = expand('%:p')<cr>]], { desc = "复制文件路径" })
