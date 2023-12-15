@@ -3,7 +3,8 @@ return {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
+    config = function(_,opts)
+      require("neorg").setup(opts)
       require("neorg").setup({
         load = {
           ["core.defaults"] = {}, -- Loads default behaviour

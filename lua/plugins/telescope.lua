@@ -1,6 +1,6 @@
 return {
   {
-    "nvim-telescope/telescope.nvim",
+    "telescope.nvim",
     dependencies = {
 
       -- 用lazyvim的配置
@@ -20,15 +20,27 @@ return {
       "debugloop/telescope-undo.nvim",
     },
     opts = {
-      media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = { "png", "webp", "jpg", "jpeg" },
-        -- find command (defaults to `fd`)
-        find_cmd = "rg",
+      defaults = {
+        media_files = {
+          -- filetypes whitelist
+          -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+          filetypes = { "png", "webp", "jpg", "jpeg" },
+          -- find command (defaults to `fd`)
+          find_cmd = "rg",
+        },
+        mappings = {
+          i = {
+            ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
+            ["<C-l>"] = require("telescope.actions").preview_scrolling_right,
+          },
+          n = {
+            -- ["q"] = actions.close,
+          },
+        },
       },
     },
-    config = function()
+    config = function(_, opts)
+      require("telescope").setup(opts)
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
       require("telescope").load_extension("dap")
