@@ -158,3 +158,6 @@ keymap({"n","v"}, "<leader>tr", "<cmd>TranslateR<cr>", { desc = "翻译并替换
 -- File
 keymap({"n", "v"}, "<leader>cn", [[<cmd>let @+ = expand('%:t')<cr><cmd>let @* = expand('%:t')<cr>]], { desc = "复制文件名" })
 keymap({"n", "v"}, "<leader>cp", [[<cmd>let @+ = expand('%:p')<cr><cmd>let @* = expand('%:p')<cr>]], { desc = "复制文件路径" })
+
+-- tools
+keymap({"v"}, "<leader>gt", "<cmd>luafile ~/.config/nvim_up/lua/config/tools/cpp/gtest.lua<cr>", { desc = "批量添加函数" })
