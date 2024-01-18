@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 -- 导入LuaSnip模块
 local ls = require("luasnip")
 -- some shorthands...
@@ -24,5 +25,16 @@ local conds_expand = require("luasnip.extras.conditions.expand")
 ls.add_snippets("all", {
   s("hello", {
     t("Hello, World!"),
+  }),
+  s("lam", {
+    t("["),
+    i(1),
+    t("]"),
+    t("("),
+    i(2),
+    t(")"),
+    t("{"),
+    i(3),
+    t("};"),
   }),
 })
