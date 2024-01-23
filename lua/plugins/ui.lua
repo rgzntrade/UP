@@ -138,7 +138,7 @@ return {
   -- },
   {
     "gen740/SmoothCursor.nvim",
-    enabled = false,
+    -- enabled = false,
     config = function()
   require("smoothcursor").setup({
     cursorID = 1,
