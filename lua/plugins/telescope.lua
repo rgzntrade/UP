@@ -21,6 +21,10 @@ return {
     },
     opts = {
       defaults = {
+        layout_strategy = "vertical",
+        -- layout_config = { prompt_position = "top" },
+        sorting_strategy = "ascending",
+        winblend = 10,
         media_files = {
           -- filetypes whitelist
           -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
