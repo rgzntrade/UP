@@ -19,8 +19,26 @@ return {
       { "nvim-telescope/telescope-live-grep-args.nvim" },
       "debugloop/telescope-undo.nvim",
     },
-    opts = {
-      defaults = {
+    opts = function(_, opts)
+      local function flash(prompt_bufnr)
+        require("flash").jump({
+          pattern = "^",
+          label = { after = { 0, 0 } },
+          search = {
+            mode = "search",
+            exclude = {
+              function(win)
+                return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+              end,
+            },
+          },
+          action = function(match)
+            local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+            picker:set_selection(match.pos[1] - 1)
+          end,
+        })
+      end
+      opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
         layout_strategy = "vertical",
         -- layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
@@ -33,16 +51,18 @@ return {
           find_cmd = "rg",
         },
         mappings = {
+          n = {
+            s = flash,
+            -- ["q"] = actions.close,
+          },
           i = {
+            ["<c-s>"] = flash,
             ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
             ["<C-l>"] = require("telescope.actions").preview_scrolling_right,
           },
-          n = {
-            -- ["q"] = actions.close,
-          },
         },
-      },
-    },
+      })
+    end,
     config = function(_, opts)
       require("telescope").setup(opts)
       require("telescope").load_extension("fzf")

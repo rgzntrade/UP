@@ -12,7 +12,6 @@ return {
         "clang-format",
         "rust-analyzer",
         "rustfmt",
-        "pylyzer",
         "bash-language-server",
         "yaml-language-server",
         "json-lsp",
