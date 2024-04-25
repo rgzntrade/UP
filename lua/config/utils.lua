@@ -15,6 +15,23 @@ M.path = {
     success:close()
     return true
   end,
+
+  open_file_in_last_window = function()
+    -- 获取光标下的单词和行号
+    local word = vim.fn.expand("<cWORD>")
+    word = word:gsub("^['\"](.-)['\"]$", "%1")
+    -- 使用正则表达式匹配文件名后的数字
+    local line_number = word:match(".*|(%d+)$")
+    -- print("word:", word)
+    -- 跳转到上个窗口
+    vim.cmd("wincmd p")
+    -- 使用 :sfind 命令来在所有窗口中查找并打开文件
+    vim.cmd("edit " .. word)
+    -- 尝试跳转到指定行数
+    if line_number ~= nil then
+      vim.cmd("normal! " .. line_number .. "G")
+    end
+  end,
 }
 
 M.system = {
