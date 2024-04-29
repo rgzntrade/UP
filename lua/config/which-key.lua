@@ -27,6 +27,7 @@ local mappings = {
     d = { "<cmd>CMake build_and_debug<CR>", "DebugTarget" },
     q = { "<cmd>CMake cancel<CR>", "Cancel" },
     s = { "<cmd>CMake set_target_args<CR>", "SetArg" },
+    c = { "<cmd>CMake clean_cache<CR>", "SetArg" },
     -- TODO: 增加 +code
   },
 }
