@@ -61,4 +61,24 @@ return {
       })
     end,
   },
+  {
+    "Wansmer/treesj",
+    keys = {
+      { "<leader>cj", "<cmd>TSJJoin<cr>", desc = "代码压缩" },
+      { "<leader>cs", "<cmd>TSJSplit<cr>", desc = "代码展开" },
+    },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("treesj").setup({--[[ your config ]]
+      })
+    end,
+  },
+  {
+    "MeanderingProgrammer/markdown.nvim",
+    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("render-markdown").setup({})
+    end,
+  },
 }
