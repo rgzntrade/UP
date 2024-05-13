@@ -162,8 +162,8 @@ keymap({"n", "v"}, "<leader>cp", [[<cmd>let @+ = expand('%:p')<cr><cmd>let @* = 
 
 -- tools
 keymap({"n","v"}, "<leader>gt", "<cmd>luafile ~/.config/nvim_up/lua/config/tools/cpp/gtest.lua<cr>", { desc = "批量添加函数" })
-keymap({"n"}, "<leader>rp", "<cmd>normal \"_deh\"0p<cr>", { desc = "不复制替换" })
-keymap({"v"}, "<leader>rp", "<cmd>normal \"_dh\"0p<cr>", { desc = "不复制替换" })
+keymap({"n"}, "<leader>rp", "<cmd>normal \"_ce<C-r>0<cr>", { desc = "不复制替换" })
+keymap({"v"}, "<leader>rp", "<cmd>normal \"_c<C-r>0<cr>", { desc = "不复制替换" })
 
 -- go to
 keymap({ "n" }, "gF", "<cmd>lua require(\"config.utils\").path.open_file_in_last_window()<cr>", { desc = "打开文件并跳转" })
