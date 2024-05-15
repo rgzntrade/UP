@@ -34,6 +34,35 @@ M.path = {
   end,
 }
 
+M.command = {
+  -- 定义一个函数，用于执行上一次的 Ex 命令
+  execute_last_command = function()
+    local last_command = vim.api.nvim_eval("@:") -- 获取寄存器 ':' 的内容，即上一次的 Ex 命令
+    print(last_command)
+    if last_command ~= "" then
+      vim.cmd(last_command) -- 执行上一次的命令
+    else
+      print("No previous command found")
+    end
+  end,
+}
+
+M.content = {
+  copy_selection_to_clipboard = function()
+    -- 模拟按下 y 键
+    vim.cmd("normal! y")
+
+    -- 获取复制的内容并存储到其他寄存器中
+    local selected_text = vim.fn.getreg("")
+
+    -- 设置选中内容到 +、* 和 " 寄存器中
+    vim.fn.setreg("+", selected_text)
+    vim.fn.setreg("*", selected_text)
+    vim.fn.setreg('"', selected_text)
+
+  end,
+}
+
 M.system = {
   is_windows = function()
     local result = vim.api.nvim_eval("has('win32') || has('win64')")

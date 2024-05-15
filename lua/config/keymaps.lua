@@ -162,9 +162,15 @@ keymap({"n", "v"}, "<leader>cp", [[<cmd>let @+ = expand('%:p')<cr><cmd>let @* = 
 
 -- tools
 keymap({"n","v"}, "<leader>gt", "<cmd>luafile ~/.config/nvim_up/lua/config/tools/cpp/gtest.lua<cr>", { desc = "批量添加函数" })
-keymap({"n"}, "<leader>rp", "<cmd>normal \"_ce<C-r>0<cr>", { desc = "不复制替换" })
-keymap({"v"}, "<leader>rp", "<cmd>normal \"_c<C-r>0<cr>", { desc = "不复制替换" })
+keymap({"n"}, "<leader>rp", "<cmd>normal \"_ce<C-r>0<cr>", { desc = "不复制替换", silent = true })
+keymap({"v"}, "<leader>rp", "<cmd>normal \"_c<C-r>0<cr>", { desc = "不复制替换", silent = true })
 
 -- go to
 keymap({ "n" }, "gF", "<cmd>lua require(\"config.utils\").path.open_file_in_last_window()<cr>", { desc = "打开文件并跳转" })
+
+-- command
+keymap({ "n" }, "<leader>;", "<cmd>lua require(\"config.utils\").command.execute_last_command()<cr>", { desc = "打开文件并跳转" })
+
+-- content
+keymap({ "v" }, "<leader>y", "<cmd>lua require(\"config.utils\").content.copy_selection_to_clipboard()<cr>", { desc = "复制到系统剪切板" })
 
