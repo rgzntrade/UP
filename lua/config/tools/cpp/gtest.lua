@@ -1,12 +1,16 @@
 -- 获取当前选中的文本
 local function get_selected_text()
-  local _, start_line, start_col, _ = unpack(vim.fn.getpos("'<"))
-  local _, end_line, end_col, _ = unpack(vim.fn.getpos("'>"))
-  local lines = vim.fn.getline(start_line, end_line)
-  if #lines == 0 then return nil end
-  lines[1] = string.sub(lines[1], start_col)
-  lines[#lines] = string.sub(lines[#lines], 1, end_col)
-  return table.concat(lines, "\n")
+  -- local _, start_line, start_col, _ = unpack(vim.fn.getpos("'<"))
+  -- local _, end_line, end_col, _ = unpack(vim.fn.getpos("'>"))
+  -- local lines = vim.fn.getline(start_line, end_line)
+  -- if #lines == 0 then return nil end
+  -- lines[1] = string.sub(lines[1], start_col)
+  -- lines[#lines] = string.sub(lines[#lines], 1, end_col)
+  -- return table.concat(lines, "\n")
+    -- 模拟按下 y 键
+    vim.cmd("normal! y")
+    -- 获取复制的内容并存储到其他寄存器中
+    return vim.fn.getreg("")
 end
 
 -- 将选中的文本分割成多行
@@ -37,6 +41,7 @@ end
 
 -- 获取选中的文本
 local selected_text = get_selected_text()
+print(selected_text)
 if selected_text then
   -- 将选中的文本分割成多行
   local lines = split_lines(selected_text)
