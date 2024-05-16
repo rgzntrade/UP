@@ -157,8 +157,18 @@ keymap({"n","v"}, "<leader>tw", "<cmd>TranslateW<cr>", { desc = "翻译并在窗
 keymap({"n","v"}, "<leader>tr", "<cmd>TranslateR<cr>", { desc = "翻译并替换" })
 
 -- File
-keymap({"n", "v"}, "<leader>cn", [[<cmd>let @+ = expand('%:t')<cr><cmd>let @* = expand('%:t')<cr>:echom expand('%:t')<cr>]], { desc = "复制文件名" })
-keymap({"n", "v"}, "<leader>cp", [[<cmd>let @+ = expand('%:p')<cr><cmd>let @* = expand('%:p')<cr>:echom expand('%:p')<cr>]], { desc = "复制文件路径" })
+keymap(
+  { "n", "v" },
+  "<leader>cn",
+  [[<cmd>let @+ = expand('%:t')<cr><cmd>let @* = expand('%:t')<cr><cmd>let @" = expand('%:t')<cr>:echom expand('%:t')<cr>]],
+  { desc = "复制文件名" }
+)
+keymap(
+  { "n", "v" },
+  "<leader>cp",
+  [[<cmd>let @+ = expand('%:p')<cr><cmd>let @* = expand('%:p')<cr><cmd>let @" = expand('%:p')<cr>:echom expand('%:p')<cr>]],
+  { desc = "复制文件路径" }
+)
 
 -- tools
 keymap({"n","v"}, "<leader>gt", "<cmd>luafile ~/.config/nvim_up/lua/config/tools/cpp/gtest.lua<cr>", { desc = "批量添加函数" })
@@ -173,4 +183,3 @@ keymap({ "n" }, "<leader>;", "<cmd>lua require(\"config.utils\").command.execute
 
 -- content
 keymap({ "v" }, "<leader>y", "<cmd>lua require(\"config.utils\").content.copy_selection_to_clipboard()<cr>", { desc = "复制到系统剪切板" })
-
