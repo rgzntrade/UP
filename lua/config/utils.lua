@@ -16,20 +16,50 @@ M.path = {
     return true
   end,
 
+  -- 跳转到上个窗口
   open_file_in_last_window = function()
-    -- 获取光标下的单词和行号
+    local open_window = function(path, line_number)
+      vim.cmd("wincmd p")
+      -- 使用 :sfind 命令来在所有窗口中查找并打开文件
+      vim.cmd("edit " .. path)
+      -- 尝试跳转到指定行数
+      if line_number ~= nil then
+        vim.cmd("normal! " .. line_number .. "G")
+      end
+    end
+    local function clean_word(word)
+      return word:gsub("^['\"](.-)['\"]$", "%1"):gsub("%s+", "")
+    end
+
+    local function match_patterns(word)
+      local file_path, line_number
+
+      -- 匹配格式 "path/to/file.ext|line"
+      file_path, line_number = word:match("^(.-)|(%d+)$")
+      if file_path and line_number then
+        return clean_word(file_path), line_number
+      end
+
+      -- 匹配格式 "path/to/file.ext:line:col"
+      file_path, line_number = word:match("^(.-):(%d+):%d+$")
+      if file_path and line_number then
+        return clean_word(file_path), line_number
+      end
+
+      return nil, nil
+    end
+
+    -- 获取光标下的单词
     local word = vim.fn.expand("<cWORD>")
-    word = word:gsub("^['\"](.-)['\"]$", "%1")
-    -- 使用正则表达式匹配文件名后的数字
-    local line_number = word:match(".*|(%d+)$")
-    -- print("word:", word)
-    -- 跳转到上个窗口
-    vim.cmd("wincmd p")
-    -- 使用 :sfind 命令来在所有窗口中查找并打开文件
-    vim.cmd("edit " .. word)
-    -- 尝试跳转到指定行数
-    if line_number ~= nil then
-      vim.cmd("normal! " .. line_number .. "G")
+    -- print("Original word:", word)
+
+    -- 匹配并提取文件路径和行号
+    local file_path, line_number = match_patterns(word)
+
+    if file_path and line_number then
+      open_window(file_path, line_number)
+    else
+      print("No match found")
     end
   end,
 }
@@ -59,7 +89,6 @@ M.content = {
     vim.fn.setreg("+", selected_text)
     vim.fn.setreg("*", selected_text)
     vim.fn.setreg('"', selected_text)
-
   end,
 }
 
