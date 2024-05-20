@@ -35,7 +35,7 @@ M.path = {
       local file_path, line_number
 
       -- 匹配格式 "path/to/file.ext|line"
-      file_path, line_number = word:match("^(.-)|(%d+)$")
+      file_path, line_number = word:match("^(.-)|(%d+).$")
       if file_path and line_number then
         return clean_word(file_path), line_number
       end
