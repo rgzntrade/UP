@@ -31,33 +31,26 @@ M.path = {
       return word:gsub("^['\"](.-)['\"]$", "%1"):gsub("%s+", "")
     end
 
+    local patterns = {
+      "^(.-)|(%d+)|$", -- 匹配格式 "path/to/file.ext|line|"
+      "^(.-)|(%d+) $", -- 匹配格式 "path/to/file.ext|line "
+      "^(.-):(%d+):$", -- 匹配格式 "path/to/file.ext:line: "
+      "^(.-):(%d+):%d+$", -- 匹配格式 "path/to/file.ext:line:col"
+    }
+
     local function match_patterns(word)
-      local file_path, line_number
-
-      -- 匹配格式 "path/to/file.ext|line|"
-      file_path, line_number = word:match("^(.-)|(%d+)$")
-      if file_path and line_number then
-        return clean_word(file_path), line_number
+      for _, pattern in ipairs(patterns) do
+        local file_path, line_number = word:match(pattern)
+        if file_path and line_number then
+          return clean_word(file_path), line_number
+        end
       end
-
-      -- 匹配格式 "path/to/file.ext|line "
-      file_path, line_number = word:match("^(.-)|(%d+) $")
-      if file_path and line_number then
-        return clean_word(file_path), line_number
-      end
-
-      -- 匹配格式 "path/to/file.ext:line:col"
-      file_path, line_number = word:match("^(.-):(%d+):%d+$")
-      if file_path and line_number then
-        return clean_word(file_path), line_number
-      end
-
       return nil, nil
     end
 
     -- 获取光标下的单词
     local word = vim.fn.expand("<cWORD>")
-    -- print("Original word:", word)
+    print("Original word:", word)
 
     -- 匹配并提取文件路径和行号
     local file_path, line_number = match_patterns(word)
