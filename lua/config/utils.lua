@@ -34,8 +34,10 @@ M.path = {
     local patterns = {
       "^(.-)|(%d+)|$", -- 匹配格式 "path/to/file.ext|line|"
       "^(.-)|(%d+) $", -- 匹配格式 "path/to/file.ext|line "
-      "^(.-):(%d+):$", -- 匹配格式 "path/to/file.ext:line: "
+      "^(.-)|(%d+)$", -- 匹配格式 "path/to/file.ext|line"
+      "^(.-):(%d+):%d+:$", -- 匹配格式 "path/to/file.ext:line:col:"
       "^(.-):(%d+):%d+$", -- 匹配格式 "path/to/file.ext:line:col"
+      "^(.-):(%d+):$", -- 匹配格式 "path/to/file.ext:line: "
     }
 
     local function match_patterns(word)
