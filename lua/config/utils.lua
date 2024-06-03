@@ -37,7 +37,9 @@ M.path = {
       "^(.-)|(%d+)$", -- 匹配格式 "path/to/file.ext|line"
       "^(.-):(%d+):%d+:$", -- 匹配格式 "path/to/file.ext:line:col:"
       "^(.-):(%d+):%d+$", -- 匹配格式 "path/to/file.ext:line:col"
-      "^(.-):(%d+):$", -- 匹配格式 "path/to/file.ext:line: "
+      "^(.-):(%d+):$ ", -- 匹配格式 "path/to/file.ext:line: "
+      "^(.-):(%d+):$", -- 匹配格式 "path/to/file.ext:line:"
+      "^(.-):(%d+)$", -- 匹配格式 "path/to/file.ext:line"
     }
 
     local function match_patterns(word)
@@ -64,7 +66,6 @@ M.path = {
     end
   end,
 }
-
 M.command = {
   -- 定义一个函数，用于执行上一次的 Ex 命令
   execute_last_command = function()

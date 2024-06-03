@@ -180,7 +180,7 @@ keymap({"v"}, "<leader>rp", "<cmd>normal \"_c<C-r>0<cr>", { desc = "不复制替
 keymap({ "n" }, "gF", "<cmd>lua require(\"config.utils\").path.open_file_in_last_window()<cr>", { desc = "打开文件并跳转" })
 
 -- command
-keymap({ "n" }, "<leader>;", "<cmd>lua require(\"config.utils\").command.execute_last_command()<cr>", { desc = "打开文件并跳转" })
+keymap({ "n" }, "<leader>;", "<cmd>lua require(\"config.utils\").command.execute_last_command()<cr>", { desc = "执行上次command" })
 
 -- content
 keymap({ "v" }, "<leader>y", "<cmd>lua require(\"config.utils\").content.copy_selection_to_clipboard()<cr>", { desc = "复制到系统剪切板" })
