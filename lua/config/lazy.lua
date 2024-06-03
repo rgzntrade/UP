@@ -34,7 +34,7 @@ require("lazy").setup({
     -- FIX: 窗口没有边界
     -- { import = "lazyvim.plugins.extras.util.gitui" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-    { import = "lazyvim.plugins.extras.editor.trouble-v3" },
+    -- { import = "lazyvim.plugins.extras.editor.trouble-v3" },
     -- TODO: 修改冲突的快捷键后可以使用lazyvim的refactoring
     -- { import = "lazyvim.plugins.extras.editor.refactoring" },
     { import = "lazyvim.plugins.extras.editor.mini-diff" },

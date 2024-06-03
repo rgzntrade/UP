@@ -52,7 +52,7 @@ M.path = {
 
     -- 获取光标下的单词
     local word = vim.fn.expand("<cWORD>")
-    print("Original word:", word)
+    -- print("Original word:", word)
 
     -- 匹配并提取文件路径和行号
     local file_path, line_number = match_patterns(word)
