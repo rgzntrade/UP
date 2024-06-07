@@ -66,6 +66,26 @@ M.path = {
     end
   end,
 }
+
+M.window = {
+pick_window = function()
+    local picker = require('window-picker')
+  print("pick_window")
+    local window_id = picker.pick_window({
+        autoselect_one = true,
+        include_current = false,
+        filter_func = nil,
+        other_win_hl_color = "#e35e4f",
+    })
+
+    if window_id then
+        vim.api.nvim_set_current_win(window_id)
+    else
+        print("No window selected")
+    end
+end
+}
+
 M.command = {
   -- 定义一个函数，用于执行上一次的 Ex 命令
   execute_last_command = function()
