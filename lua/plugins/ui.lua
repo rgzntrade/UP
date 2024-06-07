@@ -181,6 +181,12 @@ return {
   },
   { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
   {
+    "tzachar/highlight-undo.nvim",
+    opts = {
+      ...,
+    },
+  },
+  {
     "nvim-zh/colorful-winsep.nvim",
     config = true,
     event = { "WinNew" },
