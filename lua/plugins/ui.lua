@@ -15,7 +15,7 @@ return {
           for _, win_id in ipairs(window_ids) do
             local width = vim.api.nvim_win_get_width(win_id)
             local height = vim.api.nvim_win_get_height(win_id)
-            if width >= 20 and height >= 20 then
+            if width >= 3 and height >= 3 then
               table.insert(valid_windows, win_id)
             end
           end
