@@ -186,3 +186,6 @@ keymap({ "n" }, "<leader>;", "<cmd>lua require(\"config.utils\").command.execute
 
 -- content
 keymap({ "v" }, "<leader>y", "<cmd>lua require(\"config.utils\").content.copy_selection_to_clipboard()<cr>", { desc = "复制到系统剪切板" })
+
+--help
+keymap({ "n" }, "<leader>?", "<cmd>Cheatsheet<cr>", { desc = "查看备忘录" })
