@@ -11,17 +11,23 @@ return {
       })
     end,
   },
+  -- {
+  --   "folke/drop.nvim",
+  --   event = "VimEnter",
+  --   opts = {
+  --     ---@type DropTheme|string
+  --     theme = "spring", -- can be one of rhe "leaves", "snow", "stars", "xmas", "spring", "summer" themes, or a custom theme
+  --     max = 40, -- maximum number of drops on the screen
+  --     interval = 150, -- every 150ms we update the drops
+  --     screensaver = 1000 * 60 * 60, -- show after 5 minutes. Set to false, to disable
+  --     filetypes = { "starter" }, -- will enable/disable automatically for the following filetypes
+  --   },
+  -- },
+  -- 用新的甜甜圈
   {
-    "folke/drop.nvim",
-    event = "VimEnter",
-    opts = {
-      ---@type DropTheme|string
-      theme = "spring", -- can be one of rhe "leaves", "snow", "stars", "xmas", "spring", "summer" themes, or a custom theme
-      max = 40, -- maximum number of drops on the screen
-      interval = 150, -- every 150ms we update the drops
-      screensaver = 1000 * 60 * 60, -- show after 5 minutes. Set to false, to disable
-      filetypes = { "starter" }, -- will enable/disable automatically for the following filetypes
-    },
+    "NStefan002/donut.nvim",
+    version = "*",
+    lazy = false,
   },
   -- Lua
   {
@@ -54,6 +60,8 @@ return {
   },
   {
     "anuvyklack/windows.nvim",
+    -- 自动调整大小作用不明显
+    enabled = false,
     dependencies = {
       "anuvyklack/middleclass",
       "anuvyklack/animation.nvim",
@@ -213,4 +221,10 @@ return {
     config = true,
     event = { "WinNew" },
  },
+  {
+  'kyazdani42/nvim-tree.lua',
+  dependencies = {
+    'b0o/nvim-tree-preview.lua',
+  },
+},
 }

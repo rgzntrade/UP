@@ -149,6 +149,8 @@ keymap("n", "<leader>rss", "<cmd>SearchReplaceSingleBufferSelections<cr>", { des
 keymap("n", "<leader>rmw", "<cmd>SearchReplaceMultiBufferCWord<cr>", { desc = "快捷替换多个Buffer单词" })
 keymap("n", "<leader>rms", "<cmd>SearchReplaceMultiBufferSelections<cr>", { desc = "快捷选择替换多个Buffer内容" })
 
+keymap("n", "<leader>rg", "<cmd>GrugFar<cr>", { desc = "全局搜索替换" })
+
 -- undo
 keymap("n", "<leader>su", "<cmd>Telescope undo<cr>", { desc = "查看撤销修改内容" })
 

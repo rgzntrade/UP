@@ -1,4 +1,5 @@
 return {
+  {
   "roobert/search-replace.nvim",
   event = "VeryLazy",
   config = function()
@@ -8,4 +9,12 @@ return {
       -- default_replace_multi_buffer_options = "egcI",
     })
   end,
+  },
+  {
+    'MagicDuck/grug-far.nvim',
+    config = function()
+      require('grug-far').setup({
+      });
+    end
+  },
 }
