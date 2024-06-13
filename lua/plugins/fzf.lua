@@ -14,6 +14,9 @@ return {
           layout = "vertical", -- horizontal|vertical
         },
       },
+      files = {
+        default = "fd",
+      },
       grep = {
         actions = {
           ["alt-g"] = { require("fzf-lua.actions").grep_lgrep },

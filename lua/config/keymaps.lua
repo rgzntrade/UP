@@ -84,15 +84,15 @@ keymap("n", "<leader>gf", "<cmd>SymbolsOutline<cr>", { desc = "符号大纲" })
 keymap("n", "<leader>gg", "<cmd>lua require'gitui'.open()<cr>", { desc = "打开gitui" })
 
 -- Telescope
-keymap(
-  "n",
-  "<leader>fg",
-  ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-  { desc = "带参数内容搜索" }
-)
-keymap("n", "<leader>fM", "<cmd>Telescope media_files<cr>", { desc = "媒体浏览" })
-keymap("n", "<leader>fm", "<cmd>Telescope macros<cr>", { desc = "宏管理" })
-keymap("n", "<leader>tt", "<cmd>Telescope find_template<cr>", { desc = "模版管理" })
+-- keymap(
+--   "n",
+--   "<leader>fg",
+--   ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
+--   { desc = "带参数内容搜索" }
+-- )
+-- keymap("n", "<leader>fM", "<cmd>Telescope media_files<cr>", { desc = "媒体浏览" })
+-- keymap("n", "<leader>fm", "<cmd>Telescope macros<cr>", { desc = "宏管理" })
+-- keymap("n", "<leader>tt", "<cmd>Telescope find_template<cr>", { desc = "模版管理" })
 
 -- refactoring
 keymap(
