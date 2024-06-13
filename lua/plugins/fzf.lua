@@ -14,6 +14,11 @@ return {
           layout = "vertical", -- horizontal|vertical
         },
       },
+      grep = {
+        actions = {
+          ["alt-g"] = { require("fzf-lua.actions").grep_lgrep },
+        },
+      },
     },
   },
 }
