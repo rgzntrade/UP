@@ -7,5 +7,8 @@ return {
       patterns = { ".git" },
       exclude_dirs = { "~/" },
     },
+    config = function()
+      require("project_nvim").setup()
+    end,
   },
 }
