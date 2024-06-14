@@ -1,8 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.editor.fzf",
-    "lazyvim.plugins.extras.editor.inc-rename",
-    "lazyvim.plugins.extras.lang.markdown"
   ],
   "news": {
     "NEWS.md": "6077"

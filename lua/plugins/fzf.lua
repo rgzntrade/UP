@@ -14,10 +14,32 @@ return {
           layout = "vertical", -- horizontal|vertical
         },
       },
+      keymap = {
+        fzf = {
+          ["down"] = "next-history", -- 下一个历史记录
+          ["up"] = "previous-history", -- 上一个历史记录
+        },
+      },
+      git = {
+        fzf_opts = {
+          ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-git-files-history",
+        },
+      },
+      oldfiles = {
+        fzf_opts = {
+          ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-old-files-history",
+        },
+      },
       files = {
         default = "fd",
+        fzf_opts = {
+          ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-files-history",
+        },
       },
       grep = {
+        fzf_opts = {
+          ["--history"] = vim.fn.stdpath("data") .. "/fzf-lua-grep-history",
+        },
         actions = {
           ["alt-g"] = { require("fzf-lua.actions").grep_lgrep },
         },
