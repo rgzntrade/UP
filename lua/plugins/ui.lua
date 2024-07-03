@@ -51,6 +51,9 @@ return {
     "NStefan002/donut.nvim",
     version = "*",
     lazy = false,
+    opts = {
+      timeout = 300, sync_donuts = false,
+    },
   },
   -- Lua
   {
