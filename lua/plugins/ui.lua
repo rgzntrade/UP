@@ -52,7 +52,7 @@ return {
     version = "*",
     lazy = false,
     opts = {
-      timeout = 300, sync_donuts = false,
+      timeout = 1500, sync_donuts = false,
     },
   },
   -- Lua
