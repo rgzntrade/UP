@@ -1,5 +1,6 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.util.gitui"
   ],
   "news": {
     "NEWS.md": "6077"
