@@ -57,7 +57,7 @@ keymap("n", "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", { desc = "关闭其�
 keymap("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", { desc = "关闭右边Buffers" })
 keymap("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", { desc = "关闭左边Buffers" })
 keymap("n", "<leader>bs", "<cmd>BufferLinePick<cr>", { desc = "选择Buffers" })
-keymap("n", "<leader>bt", "<cmd>terminal<cr> :startinsert<cr>", { desc = "Buffer中打开terminalqq" })
+keymap("n", "<leader>bt", "<cmd>terminal<cr> :startinsert<cr>", { desc = "Buffer中打开terminal" })
 keymap("n", "<tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "切换到下一个Buffers" })
 keymap("n", "<S-tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "切换到上一个Buffers" })
 
