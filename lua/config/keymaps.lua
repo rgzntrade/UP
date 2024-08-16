@@ -193,3 +193,8 @@ keymap({ "n" }, "<leader>?", "<cmd>Cheatsheet<cr>", { desc = "查看备忘录" }
 
 --in and out
 keymap({ "i" }, "<A-CR>", "<cmd>lua require('in-and-out').in_and_out()<cr>", { desc = "查看备忘录" })
+
+-- neogen
+keymap({ "n" }, "<leader>nc", "<cmd>lua require('neogen').generate({ type = 'class' })<CR>", { desc = "生成类注释" })
+keymap({ "n" }, "<leader>nf", "<cmd>lua require('neogen').generate({ type = 'func' })<CR>", { desc = "生成函数注释" })
+keymap({ "n" }, "<leader>nd", "<cmd>lua require('neogen').generate({ type = 'file' })<CR>", { desc = "生成文件注释" })
