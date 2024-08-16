@@ -35,6 +35,7 @@ return {
     },
     opts = function(_, opts)
       local cmp = require("cmp")
+      local neogen = require('neogen')
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
         { name = "codeium" },
         { name = "cmdline" },
@@ -65,6 +66,8 @@ return {
             cmp.select_next_item()
           elseif require("luasnip").expand_or_jumpable() then
             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+          elseif neogen.jumpable() then
+                neogen.jump_next()
           else
             fallback()
           end
@@ -77,6 +80,8 @@ return {
             cmp.select_prev_item()
           elseif require("luasnip").jumpable(-1) then
             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+          elseif neogen.jumpable(-1) then
+                neogen.jump_prev()
           else
             fallback()
           end
