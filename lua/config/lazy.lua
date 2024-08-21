@@ -40,7 +40,8 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.editor.trouble-v3" },
     -- TODO: 修改冲突的快捷键后可以使用lazyvim的refactoring
     -- { import = "lazyvim.plugins.extras.editor.refactoring" },
-    { import = "lazyvim.plugins.extras.editor.mini-diff" },
+    -- 没有gitsign的功能多
+    -- { import = "lazyvim.plugins.extras.editor.mini-diff" },
     { import = "lazyvim.plugins.extras.editor.illuminate" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
     { import = "lazyvim.plugins.extras.editor.fzf" },
