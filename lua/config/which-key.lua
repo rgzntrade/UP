@@ -16,7 +16,7 @@ local opts = {
 
 local mappings = {
 
-  { "<Space>aa", "<cmd>Dashboard<cr>", desc = "Welcome", nowait = true, remap = false },
+  { "<Space>aw", "<cmd>Dashboard<cr>", desc = "Welcome", nowait = true, remap = false },
   { "<Space>m", group = "CMake", nowait = true, remap = false },
   { "<Space>mT", "<cmd>CMake select_build_type<CR>", desc = "SelectBuildType", nowait = true, remap = false },
   { "<Space>ma", "<cmd>CMake build_all<CR>", desc = "BuildAll", nowait = true, remap = false },
