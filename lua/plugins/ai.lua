@@ -24,7 +24,7 @@ return {
         desc = "avante: refresh",
       },
       {
-        "<leader>ae",
+        "<leader>ab",
         function()
           require("avante.api").edit()
         end,
@@ -38,24 +38,6 @@ return {
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "zbirenbaum/copilot.lua", -- for providers='copilot'
-      {
-        -- support for image pasting
-        "HakonHarnes/img-clip.nvim",
-        event = "VeryLazy",
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-            -- required for Windows users
-            use_absolute_path = true,
-          },
-        },
-      },
       {
         -- Make sure to setup it properly if you have lazy=true
         "MeanderingProgrammer/render-markdown.nvim",

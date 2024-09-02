@@ -74,12 +74,13 @@ return {
       })
     end,
   },
-  {
-    "MeanderingProgrammer/markdown.nvim",
-    name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      require("render-markdown").setup({})
-    end,
-  },
+  -- NOTE: 与anvate插件兼容，暂时注释
+  -- {
+  --   "MeanderingProgrammer/markdown.nvim",
+  --   name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  --   config = function()
+  --     require("render-markdown").setup({})
+  --   end,
+  -- },
 }
