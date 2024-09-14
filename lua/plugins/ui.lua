@@ -47,14 +47,14 @@ return {
   --   },
   -- },
   -- 用新的甜甜圈
-  {
-    "NStefan002/donut.nvim",
-    version = "*",
-    lazy = false,
-    opts = {
-      timeout = 1500, sync_donuts = false,
-    },
-  },
+  -- {
+  --   "NStefan002/donut.nvim",
+  --   version = "*",
+  --   lazy = false,
+  --   opts = {
+  --     timeout = 1500, sync_donuts = false,
+  --   },
+  -- },
   -- Lua
   {
     "folke/zen-mode.nvim",
