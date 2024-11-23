@@ -8,7 +8,7 @@ return {
     opts = function(_, opts)
       local cmake = require("cmake-tools")
       opts.cmake_build_directory = function()
-        if vim.fn.has("win32") then
+        if vim.fn.has("win32") == 1 then
           return "build\\${variant:buildType}"
         end
         return "build/${variant:buildType}"
