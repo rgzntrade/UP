@@ -13,15 +13,11 @@ vim.api.nvim_create_autocmd("FileType", {
 local keymap_exists = function(mode, lhs)
   local exists = false
   for _, map in ipairs(vim.api.nvim_get_keymap(mode)) do
-    -- vim.print(map.lhs)
-    -- vim.print(lhs)
     if map.lhs == lhs then
       exists = true
-      -- vim.print("true")
       break
     end
   end
-  vim.print(exists)
   return exists
 end
 
