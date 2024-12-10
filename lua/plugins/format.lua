@@ -8,7 +8,10 @@ return {
       },
       formatters_by_ft = {
         cpp = { "clang-format" },
-        cmake = { "cmakelang" },
+        cmake = {
+          "cmakelang",
+        },
+        lua = { "stylua" },
       },
       formatters = {
         clang_format = { prepend_args = { "--style=file" } },

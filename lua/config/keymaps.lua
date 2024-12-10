@@ -66,17 +66,30 @@ keymap("n", "<leader>wo", "<C-w>o", { desc = "关闭其它窗口" })
 keymap("n", "<leader>wz", "<cmd>ZenMode<cr>", { desc = "禅窗口" })
 keymap("n", "<leader>w=", "<cmd>WindowsEqualize<cr>", { desc = "窗口等距" })
 keymap("n", "<leader>wp", "<C-w>p<cr>", { desc = "跳转至上个窗口" })
-keymap("n", "<leader>ws", "<cmd>lua require(\"config.utils\").window.pick_window()<cr>", { desc = "选择一个窗口" })
+keymap("n", "<leader>ws", '<cmd>lua require("config.utils").window.pick_window()<cr>', { desc = "选择一个窗口" })
 
 -- clangd
 keymap("n", "<A-o>", "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "切换h/cpp" })
 
+local function handleToggleTermWithNumber(cmd)
+  local new_cmd = cmd
+  local count = vim.v.count
+  local number = count or 2
+  if number then
+    new_cmd = number .. new_cmd
+  end
+  vim.cmd(new_cmd)
+end
+
 -- toggleterm
-keymap({ "n", "t" }, "<A-h>", "<cmd>ToggleTerm size=20 direction=horizontal<cr>", { desc = "横向终端" })
-keymap({ "n", "t" }, "<A-v>", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "纵向终端" })
+keymap({ "n", "t" }, "<A-h>", function()
+  handleToggleTermWithNumber("ToggleTerm size=20 direction=horizontal")
+end, { desc = "横向终端" })
+keymap({ "n", "t" }, "<A-v>", function()
+  handleToggleTermWithNumber("ToggleTerm size=60 direction=vertical")
+end, { desc = "纵向终端" })
 keymap({ "n", "t" }, "<A-t>", "<cmd>ToggleTerm size=40 direction=tab<cr>", { desc = "tab终端" })
 keymap({ "n", "t" }, "<A-f>", "<cmd>ToggleTerm size=40 direction=float<cr>", { desc = "浮动终端" })
-keymap({ "n", "t" }, "<A-n>", "<cmd>ToggleTerm<cr>", { desc = "终端开关" })
 
 -- symbol-outline
 keymap("n", "<leader>gf", "<cmd>SymbolsOutline<cr>", { desc = "符号大纲" })
@@ -146,9 +159,19 @@ keymap(
 
 -- search-replace
 keymap("n", "<leader>rsw", "<cmd>SearchReplaceSingleBufferCWord<cr>", { desc = "快捷替换当前Buffer单词" })
-keymap("n", "<leader>rss", "<cmd>SearchReplaceSingleBufferSelections<cr>", { desc = "快捷选择替换当前Buffer内容" })
+keymap(
+  "n",
+  "<leader>rss",
+  "<cmd>SearchReplaceSingleBufferSelections<cr>",
+  { desc = "快捷选择替换当前Buffer内容" }
+)
 keymap("n", "<leader>rmw", "<cmd>SearchReplaceMultiBufferCWord<cr>", { desc = "快捷替换多个Buffer单词" })
-keymap("n", "<leader>rms", "<cmd>SearchReplaceMultiBufferSelections<cr>", { desc = "快捷选择替换多个Buffer内容" })
+keymap(
+  "n",
+  "<leader>rms",
+  "<cmd>SearchReplaceMultiBufferSelections<cr>",
+  { desc = "快捷选择替换多个Buffer内容" }
+)
 
 keymap("n", "<leader>rg", "<cmd>GrugFar<cr>", { desc = "全局搜索替换" })
 
@@ -156,9 +179,9 @@ keymap("n", "<leader>rg", "<cmd>GrugFar<cr>", { desc = "全局搜索替换" })
 keymap("n", "<leader>su", "<cmd>Telescope undo<cr>", { desc = "查看撤销修改内容" })
 
 -- translate
-keymap({"n","v"}, "<leader>tm", "<cmd>Translate<cr>", { desc = "翻译并在消息显示" })
-keymap({"n","v"}, "<leader>tw", "<cmd>TranslateW<cr>", { desc = "翻译并在窗口显示" })
-keymap({"n","v"}, "<leader>tr", "<cmd>TranslateR<cr>", { desc = "翻译并替换" })
+keymap({ "n", "v" }, "<leader>tm", "<cmd>Translate<cr>", { desc = "翻译并在消息显示" })
+keymap({ "n", "v" }, "<leader>tw", "<cmd>TranslateW<cr>", { desc = "翻译并在窗口显示" })
+keymap({ "n", "v" }, "<leader>tr", "<cmd>TranslateR<cr>", { desc = "翻译并替换" })
 
 -- File
 keymap(
@@ -175,18 +198,38 @@ keymap(
 )
 
 -- tools
-keymap({"n","v"}, "<leader>gt", "<cmd>luafile ~/.config/nvim_up/lua/config/tools/cpp/gtest.lua<cr>", { desc = "批量添加函数" })
-keymap({"n"}, "<leader>rp", "<cmd>normal \"_ce<C-r>0<cr>", { desc = "不复制替换", silent = true })
-keymap({"v"}, "<leader>rp", "<cmd>normal \"_c<C-r>0<cr>", { desc = "不复制替换", silent = true })
+keymap(
+  { "n", "v" },
+  "<leader>gt",
+  "<cmd>luafile ~/.config/nvim_up/lua/config/tools/cpp/gtest.lua<cr>",
+  { desc = "批量添加函数" }
+)
+keymap({ "n" }, "<leader>rp", '<cmd>normal "_ce<C-r>0<cr>', { desc = "不复制替换", silent = true })
+keymap({ "v" }, "<leader>rp", '<cmd>normal "_c<C-r>0<cr>', { desc = "不复制替换", silent = true })
 
 -- go to
-keymap({ "n" }, "gF", "<cmd>lua require(\"config.utils\").path.open_file_in_last_window()<cr>", { desc = "打开文件并跳转" })
+keymap(
+  { "n" },
+  "gF",
+  '<cmd>lua require("config.utils").path.open_file_in_last_window()<cr>',
+  { desc = "打开文件并跳转" }
+)
 
 -- command
-keymap({ "n" }, "<leader>;", "<cmd>lua require(\"config.utils\").command.execute_last_command()<cr>", { desc = "执行上次command" })
+keymap(
+  { "n" },
+  "<leader>;",
+  '<cmd>lua require("config.utils").command.execute_last_command()<cr>',
+  { desc = "执行上次command" }
+)
 
 -- content
-keymap({ "v" }, "<leader>y", "<cmd>lua require(\"config.utils\").content.copy_selection_to_clipboard()<cr>", { desc = "复制到系统剪切板" })
+keymap(
+  { "v" },
+  "<leader>y",
+  '<cmd>lua require("config.utils").content.copy_selection_to_clipboard()<cr>',
+  { desc = "复制到系统剪切板" }
+)
 
 --help
 keymap({ "n" }, "<leader>?", "<cmd>Cheatsheet<cr>", { desc = "查看备忘录" })
@@ -195,6 +238,21 @@ keymap({ "n" }, "<leader>?", "<cmd>Cheatsheet<cr>", { desc = "查看备忘录" }
 keymap({ "i" }, "<A-CR>", "<cmd>lua require('in-and-out').in_and_out()<cr>", { desc = "查看备忘录" })
 
 -- neogen
-keymap({ "n" }, "<leader>nc", "<cmd>lua require('neogen').generate({ type = 'class' })<CR>", { desc = "生成类注释" })
-keymap({ "n" }, "<leader>nf", "<cmd>lua require('neogen').generate({ type = 'func' })<CR>", { desc = "生成函数注释" })
-keymap({ "n" }, "<leader>nd", "<cmd>lua require('neogen').generate({ type = 'file' })<CR>", { desc = "生成文件注释" })
+keymap(
+  { "n" },
+  "<leader>nc",
+  "<cmd>lua require('neogen').generate({ type = 'class' })<CR>",
+  { desc = "生成类注释" }
+)
+keymap(
+  { "n" },
+  "<leader>nf",
+  "<cmd>lua require('neogen').generate({ type = 'func' })<CR>",
+  { desc = "生成函数注释" }
+)
+keymap(
+  { "n" },
+  "<leader>nd",
+  "<cmd>lua require('neogen').generate({ type = 'file' })<CR>",
+  { desc = "生成文件注释" }
+)

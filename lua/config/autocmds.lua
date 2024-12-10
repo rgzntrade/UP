@@ -9,3 +9,42 @@ vim.api.nvim_create_autocmd("FileType", {
     require("config.debug-dap.dap-util").load_breakpoints()
   end,
 })
+
+local keymap_exists = function(mode, lhs)
+  local exists = false
+  for _, map in ipairs(vim.api.nvim_get_keymap(mode)) do
+    -- vim.print(map.lhs)
+    -- vim.print(lhs)
+    if map.lhs == lhs then
+      exists = true
+      -- vim.print("true")
+      break
+    end
+  end
+  vim.print(exists)
+  return exists
+end
+
+function _G.set_terminal_keymaps()
+  local opts = { buffer = 0 }
+  if not keymap_exists("n", "<Esc>") then
+    vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+  end
+  vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]], opts)
+  vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
+  vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
+  vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
+  vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
+  vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+end
+
+-- 创建移除终端快捷键的函数
+function _G.unset_terminal_keymaps()
+  local opts = { buffer = 0 }
+  -- if not keymap_exists('n', '<Esc>')  then vim.keymap.del('t', '<Esc>', opts) end
+end
+
+-- 在 TermOpen 事件中设置快捷键
+vim.cmd("autocmd! TermEnter term://*toggleterm#* lua set_terminal_keymaps()")
+-- 在 TermClose 事件中移除快捷键
+vim.cmd("autocmd! TermLeave term://*toggleterm#* lua unset_terminal_keymaps()")
