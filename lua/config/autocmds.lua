@@ -36,11 +36,15 @@ end
 
 -- 创建移除终端快捷键的函数
 function _G.unset_terminal_keymaps()
-  local opts = { buffer = 0 }
-  -- if not keymap_exists('n', '<Esc>')  then vim.keymap.del('t', '<Esc>', opts) end
+  local opts = { buffer = 0 } -- if not keymap_exists('n', '<Esc>')  then vim.keymap.del('t', '<Esc>', opts) end
 end
 
 -- 在 TermOpen 事件中设置快捷键
 vim.cmd("autocmd! TermEnter term://*toggleterm#* lua set_terminal_keymaps()")
 -- 在 TermClose 事件中移除快捷键
 vim.cmd("autocmd! TermLeave term://*toggleterm#* lua unset_terminal_keymaps()")
+
+-- terminal color
+-- TODO: wait plugin fix
+vim.cmd("highlight TermWin guibg=#ff282c34")
+vim.cmd("autocmd TermOpen * setlocal winhighlight=Normal:TermWin")
