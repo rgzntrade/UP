@@ -81,7 +81,7 @@ local function handleToggleTermWithNumber(cmd)
 end
 
 -- toggleterm
-keymap({ "n", "t" }, "<A-/>", function()
+keymap({ "n", "t" }, "<A-d>", function()
   handleToggleTermWithNumber("ToggleTerm size=20 direction=horizontal")
 end, { desc = "横向终端" })
 keymap({ "n", "t" }, "<A-s>", function()
