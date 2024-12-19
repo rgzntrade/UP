@@ -109,23 +109,23 @@ return {
       require("colorizer").setup()
     end,
   },
-  {
-    "nvimdev/dashboard-nvim",
-    optional = true,
-    opts = function(_, opts)
-      local logo = [[
-   ██╗    ███╗    ██╗   ██╗██████╗     ███╗    ██╗ 
-  ██╔╝    ██╔╝    ██║   ██║██╔══██╗    ╚██║    ╚██╗
-  ██║     ██║     ██║   ██║██████╔╝     ██║     ██║
-  ██║     ██║     ██║   ██║██╔═══╝      ██║     ██║
-  ╚██╗    ███╗    ╚██████╔╝██║         ███║    ██╔╝
-   ╚═╝    ╚══╝     ╚═════╝ ╚═╝         ╚══╝    ╚═╝ 
-      ]]
-
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
-      opts.config.header = vim.split(logo, "\n")
-    end,
-  },
+  -- {
+  --   "nvimdev/dashboard-nvim",
+  --   optional = true,
+  --   opts = function(_, opts)
+  --     local logo = [[
+  --  ██╗    ███╗    ██╗   ██╗██████╗     ███╗    ██╗ 
+  -- ██╔╝    ██╔╝    ██║   ██║██╔══██╗    ╚██║    ╚██╗
+  -- ██║     ██║     ██║   ██║██████╔╝     ██║     ██║
+  -- ██║     ██║     ██║   ██║██╔═══╝      ██║     ██║
+  -- ╚██╗    ███╗    ╚██████╔╝██║         ███║    ██╔╝
+  --  ╚═╝    ╚══╝     ╚═════╝ ╚═╝         ╚══╝    ╚═╝ 
+  --     ]]
+  --
+  --     logo = string.rep("\n", 8) .. logo .. "\n\n"
+  --     opts.config.header = vim.split(logo, "\n")
+  --   end,
+  -- },
   -- {
   --   "goolord/alpha-nvim",
   --   opts = function(_, opts)
