@@ -47,5 +47,6 @@ vim.cmd("autocmd! TermLeave term://*toggleterm#* lua unset_terminal_keymaps()")
 
 -- terminal color
 -- TODO: wait plugin fix
-vim.cmd("highlight TermWin guibg=#ff282c34")
+vim.cmd("highlight TermWin guibg=#282c34")
 vim.cmd("autocmd TermOpen * setlocal winhighlight=Normal:TermWin")
+vim.cmd("autocmd TermEnter * setlocal winhighlight=Normal:TermWin")
