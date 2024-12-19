@@ -43,7 +43,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.editor.refactoring" },
     -- 没有gitsign的功能多
     -- { import = "lazyvim.plugins.extras.editor.mini-diff" },
-    { import = "lazyvim.plugins.extras.editor.illuminate" },
+    -- { import = "lazyvim.plugins.extras.editor.illuminate" },
     { import = "lazyvim.plugins.extras.editor.inc-rename" },
     { import = "lazyvim.plugins.extras.editor.fzf" },
     { import = "lazyvim.plugins.extras.vscode" },
