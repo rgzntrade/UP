@@ -31,7 +31,8 @@ function _G.set_terminal_keymaps()
   vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
   vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
   vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
-  vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
+  vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>w]], opts)
+  vim.keymap.set("n", "q", [[<C-w>w]], opts)
 end
 
 -- 创建移除终端快捷键的函数
