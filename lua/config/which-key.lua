@@ -26,6 +26,7 @@ local mappings = {
   { "<Space>mg", "<cmd>CMakeGenerate<CR>", desc = "CMakeGenerate", nowait = true, remap = false },
   { "<Space>mr", "<cmd>CMakeRun<CR>", desc = "Run", nowait = true, remap = false },
   { "<Space>ms", group = "CMakeSelect", nowait = true, remap = false },
+  { "<Space>msc", "<cmd>CMakeSelectCwd<CR>", desc = "SelectCwdDir", nowait = true, remap = false },
   { "<Space>msd", "<cmd>CMakeSelectBuildDir<CR>", desc = "SelectBuildDir", nowait = true, remap = false },
   { "<Space>mss", "<cmd>CMakeSettings<CR>", desc = "CmakeSettings", nowait = true, remap = false },
   { "<Space>mst", "<cmd>CMakeTargetSettings<CR>", desc = "TargetSettings", nowait = true, remap = false },
