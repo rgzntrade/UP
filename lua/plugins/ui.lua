@@ -156,6 +156,7 @@ return {
   --     require("modicator").setup()
   --   end,
   -- },
+
   {
     "gen740/SmoothCursor.nvim",
     -- enabled = false,
@@ -165,7 +166,9 @@ return {
       },
     },
   },
+
   { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" },
+
   {
     "nvim-zh/colorful-winsep.nvim",
     config = true,
@@ -176,5 +179,10 @@ return {
   "sphamba/smear-cursor.nvim",
   opts = {
   }
-  }
+  },
+
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false
+  },
 }
