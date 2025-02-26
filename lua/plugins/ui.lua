@@ -171,4 +171,10 @@ return {
     config = true,
     event = { "WinNew" },
   },
+
+  {
+  "sphamba/smear-cursor.nvim",
+  opts = {
+  }
+  }
 }
