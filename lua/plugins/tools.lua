@@ -93,4 +93,6 @@ return {
       snooze_duration = 1, -- The additionnal work time you get when you delay a break
     },
   },
+
+  { "meznaric/key-analyzer.nvim", opts = {} },
 }
