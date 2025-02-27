@@ -177,8 +177,9 @@ return {
 
   {
   "sphamba/smear-cursor.nvim",
-  opts = {
-  }
+    opts = {
+      hide_target_hack = true,
+    },
   },
 
   {
