@@ -177,6 +177,10 @@ return {
 
   {
   "sphamba/smear-cursor.nvim",
+    enabled = function()
+  -- 检查 vim.g.neovide 是否为 nil
+  return not vim.g.neovide
+  end,
     opts = {
       hide_target_hack = true,
     },
