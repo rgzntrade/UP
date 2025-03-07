@@ -9,4 +9,16 @@ if vim.g.neovide then
   vim.keymap.set("i", "<C-S-v>", "<C-R>+") -- Paste insert mode
   vim.keymap.set("i", "<C-S-v>", "<C-R>+") -- Paste insert mode
   vim.keymap.set("t", "<C-S-v>", "<Esc><Esc><cmd>put +<cr>") -- Paste insert mode
+
+  vim.g.neovide_scale_factor = 1.0
+  local change_scale_factor = function(delta)
+      vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+  end
+  vim.keymap.set("n", "<C-=>", function()
+      change_scale_factor(1.25)
+  end)
+  vim.keymap.set("n", "<C-->", function()
+      change_scale_factor(1/1.25)
+  end)
+
 end
