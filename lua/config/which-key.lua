@@ -16,7 +16,7 @@ local opts = {
 
 local mappings = {
 
-  { "<Space>aw", "<cmd>Dashboard<cr>", desc = "Welcome", nowait = true, remap = false },
+  { "<Space>aw", "<cmd>lua Snacks.dashboard()<cr>", desc = "Welcome", nowait = true, remap = false },
   { "<Space>m", group = "CMake", nowait = true, remap = false },
   { "<Space>mT", "<cmd>CMakeSelectBuildType<CR>", desc = "SelectBuildType", nowait = true, remap = false },
   { "<Space>mb", "<cmd>CMakeBuild<CR>", desc = "Build", nowait = true, remap = false },
