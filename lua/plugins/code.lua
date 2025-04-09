@@ -1,5 +1,31 @@
 return {
-  { "CRAG666/code_runner.nvim", config = true },
+  {
+    "CRAG666/code_runner.nvim",
+    config = true,
+    opts = {
+    filetype = {
+    --     java = {
+    --       "cd $dir &&",
+    --       "javac $fileName &&",
+    --       "java $fileNameWithoutExt",
+    --     },
+    --     python = "python3 -u",
+    --     typescript = "deno run",
+    --     rust = {
+    --       "cd $dir &&",
+    --       "rustc $fileName &&",
+    --       "$dir/$fileNameWithoutExt",
+    --     },
+    cpp = {
+      "cd $dir &&",
+      "g++ -std=c++17 $fileName",
+      "-o $fileNameWithoutExt &&",
+      "$dir/$fileNameWithoutExt"
+    },
+       },
+       -- 可以根据需要添加更多语言的配置
+     },
+  },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
     lazy = true,
