@@ -255,3 +255,15 @@ keymap(
   "<cmd>lua require('neogen').generate({ type = 'file' })<CR>",
   { desc = "生成文件注释" }
 )
+
+-- code runner
+keymap({ "n" }, "<leader>rr", "<cmd>RunCode<CR>", { desc = "运行代码" })
+
+keymap({ "n" }, "<leader>rf", "<cmd>RunFile<CR>", { desc = "运行文件" })
+
+keymap(
+  { "n" },
+  "<leader>rc",
+  "<cmd>RunClose<CR>",
+  { desc = "结束运行" }
+)
