@@ -18,7 +18,7 @@ return {
     --     },
     cpp = {
       "cd $dir &&",
-      "g++ -std=c++17 $fileName",
+      "g++ -std=c++17 -pthread $fileName",
       "-o $fileNameWithoutExt &&",
       "$dir/$fileNameWithoutExt"
     },
