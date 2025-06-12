@@ -12,6 +12,7 @@ return {
           "cmakelang",
         },
         lua = { "stylua" },
+        xml = { "xmlformatter" },
       },
       formatters = {
         clang_format = { prepend_args = { "--style=file" } },
