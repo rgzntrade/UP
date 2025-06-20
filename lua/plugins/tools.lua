@@ -155,6 +155,7 @@ return {
         "tailwindcss-language-server",
         "css-lsp",
         "html-lsp",
+        "xmlformatter",
       }, -- not an option from mason.nvim
     },
   },
