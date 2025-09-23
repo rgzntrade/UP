@@ -1,1 +1,1 @@
-return { "echasnovski/mini.align", event = "VeryLazy", version = "*", opts = { setup = {} } }
+return { "nvim-mini/mini.align", event = "VeryLazy", version = "*", opts = { setup = {} } }
