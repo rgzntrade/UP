@@ -47,7 +47,7 @@ vim.o.cmdheight = 2
 vim.o.autoread = true
 vim.bo.autoread = true
 -- 鼠标支持
-vim.o.mouse = "a"
+vim.o.mouse = ""
 -- 禁止创建备份文件
 vim.o.backup = false
 vim.o.writebackup = false
