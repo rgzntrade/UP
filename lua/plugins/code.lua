@@ -51,7 +51,7 @@ return {
     opts = {
       -- configuration goes here
       ---@type string
-      arg = "leetcode.nvim",
+      arg = "leet",
 
       ---@type lc.lang
       lang = "cpp",
@@ -60,6 +60,10 @@ return {
         enabled = true, ---@type boolean
         translator = true, ---@type boolean
         translate_problems = true, ---@type boolean
+      },
+      ---@type table<string, boolean>
+      plugins = {
+        non_standalone = false,
       },
     },
   },
