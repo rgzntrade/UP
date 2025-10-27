@@ -270,3 +270,12 @@ keymap(
   "<cmd>RunClose<CR>",
   { desc = "结束运行" }
 )
+
+-- leet code
+keymap({ "n" }, "<leader>jt", "<cmd>Leet test<CR>", { desc = "测试代码" })
+keymap({ "n" }, "<leader>jr", "<cmd>Leet run<CR>", { desc = "运行代码" })
+keymap({ "n" }, "<leader>jl", "<cmd>Leet list<CR>", { desc = "题目列表" })
+keymap({ "n" }, "<leader>jm", "<cmd>Leet menu<CR>", { desc = "leetcode" })
+keymap({ "n" }, "<leader>js", "<cmd>Leet submit<CR>", { desc = "提交代码" })
+keymap({ "n" }, "<leader>jv", "<cmd>Leet last_submit<CR>", { desc = "查看代码" })
+keymap({ "n" }, "<leader>jd", "<cmd>Leet desc<CR>", { desc = "查看描述" })
