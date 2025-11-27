@@ -1,7 +1,7 @@
 return {
   {
-    "mizlan/iswap.nvim",
-    event = "InsertEnter",
-    opts = {},
+    -- "mizlan/iswap.nvim",
+    -- event = "InsertEnter",
+    -- opts = {},
   },
 }
